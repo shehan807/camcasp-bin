@@ -7,7 +7,7 @@
 
 1. CamCASP is now available from github.com. The recommended procedure
    is to change to a suitable directory and run the command, e.g.
-   > git clone git@github.com:ajmisquitta/camcasp-bin.git/camcasp.git camcasp-7.0
+   > git clone git@github.com:ajmisquitta/camcasp-bin.git camcasp-7.0
 
    which will clone the code into a new camcasp-7.0 subdirectory.
 
@@ -16,6 +16,8 @@
    > cd camcasp-7.0
 
    > gunzip x86-64/{ifort,gfortran}/\*.gz
+
+   Note that there are no binary files included for OSX.
 
 2. It is no longer necessary to apply for a licence to use CamCASP,
    but your use of the program is subject to the licence that is to be
@@ -26,14 +28,15 @@
    >    export CAMCASP=$PWD
 
    though usually you will want to set this variable in your startup
-   script. 
+   script, in which case replace $PWD with the output of this command; i.e.,
+   the full path to the CAMCASP base directory.
 
-4. Add the CAMCASP bin directory to your path, e.g. using
+5. Add the CAMCASP bin directory to your path, e.g. using
    > export PATH=$CAMCASP/bin:$PATH
 
    Again, this is most conveniently done in your startup directory.
 
-5. CamCASP needs at least one of the SCF codes Dalton or NWChem or
+6. CamCASP needs at least one of the SCF codes Dalton or NWChem or
    Psi4. For each of these that you wish to use, provide either
    a symbolic link dalton or nwchem or psi4 in the CamCASP/bin directory
    that points to the corresponding executable, or a shell script
@@ -41,7 +44,7 @@
    the program. There are example files CamCASP/bin/psi4.sh.example
    etc. that explain what is needed.
 
-6. Run the command 
+7. Run the command 
    >    setup.py
 
    (You will need Python, version 3.6 or later, for this and other
@@ -54,7 +57,7 @@
    The setup.py script can be run again at any time, if for example
    you install another SCF program.
 
-7. Run the tests in the CamCASP/tests directory. See the README in
+8. Run the tests in the CamCASP/tests directory. See the README in
    that directory for details, or run
    >    run\_tests.py --help
 
